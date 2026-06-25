@@ -1,0 +1,3 @@
+# Copie para terraform.tfvars e preencha com seus valores
+alert_email = "exemplo@email.com"
+aws_profile = "profile"

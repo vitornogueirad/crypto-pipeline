@@ -1,0 +1,20 @@
+# Terraform
+infra/.terraform/
+infra/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+infra/build/
+*.tfvars
+response.json
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Credenciais
+.env
+*.pem
+credentials

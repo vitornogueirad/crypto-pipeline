@@ -6,13 +6,19 @@ infra/.terraform.lock.hcl
 infra/build/
 *.tfvars
 response.json
+.terraform
+build/
+infra/streaming/tfplan
+
 
 # Python
 __pycache__/
 *.pyc
 .pytest_cache/
+.ruff_cache
 .venv/
 venv/
+env/
 
 # Credenciais
 .env

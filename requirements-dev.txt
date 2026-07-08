@@ -1,3 +1,6 @@
 ruff
 pytest
+pytest-asyncio
 boto3
+websockets
+pytest-asyncio

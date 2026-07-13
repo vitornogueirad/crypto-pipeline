@@ -8,6 +8,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
+from conftest import load_module
+
 
 @pytest.fixture(autouse=True)
 def env(monkeypatch):
@@ -19,10 +21,7 @@ def env(monkeypatch):
 
 
 def _fresh_handler():
-    import importlib
-    import handler
-    importlib.reload(handler)
-    return handler
+    return load_module("handler_coingecko", "src\ingestion\coingecko\handler.py")
 
 
 def test_build_s3_key_usa_particionamento_hive():

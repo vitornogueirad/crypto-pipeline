@@ -21,7 +21,7 @@ def env(monkeypatch):
 
 
 def _fresh_handler():
-    return load_module("handler_coingecko", "src\ingestion\coingecko\handler.py")
+    return load_module("handler_coingecko", "src/ingestion/coingecko/handler.py")
 
 
 def test_build_s3_key_usa_particionamento_hive():

@@ -62,7 +62,7 @@ def test_handler_grava_no_s3_com_metadado():
 
     body_lines = call["Body"].decode("utf-8").splitlines()
     first_record = json.loads(body_lines[0])
-    assert "_ingested_at" in first_record
+    assert "ingested_at" in first_record
 
 
 def test_handler_lista_vazia_nao_grava():

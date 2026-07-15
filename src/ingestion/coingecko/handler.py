@@ -94,7 +94,7 @@ def handler(event, context):
     # Adiciona metadado de ingestão em cada registro
     ingested_at = now.isoformat()
     for record in data:
-        record["_ingested_at"] = ingested_at
+        record["ingested_at"] = ingested_at
 
     # Grava como JSON Lines (um registro por linha)
     body = "\n".join(json.dumps(r, ensure_ascii=False) for r in data)

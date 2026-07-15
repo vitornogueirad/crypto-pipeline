@@ -138,7 +138,7 @@ def handler(event, context):
                 continue
             vistos_no_batch.add(trade_id)
 
-            trade["_ingested_at"] = ingested_at
+            trade["ingested_at"] = ingested_at
             candidatos.append((trade_id, trade))
             seq_por_trade[trade_id] = seq
         except Exception as exc:  # noqa: BLE001

@@ -63,9 +63,9 @@ resource "aws_iam_role_policy" "athena_query_execution" {
         Resource = "arn:aws:s3:::${var.data_lake_bucket}/bronze/*"
       },
       {
-        Sid      = "WriteSilverGold"
-        Effect   = "Allow"
-        Action   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
+        Sid    = "WriteSilverGold"
+        Effect = "Allow"
+        Action = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
         Resource = [
           "arn:aws:s3:::${var.data_lake_bucket}/silver/*",
           "arn:aws:s3:::${var.data_lake_bucket}/gold/*"

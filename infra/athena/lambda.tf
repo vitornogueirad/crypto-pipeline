@@ -38,12 +38,12 @@ data "archive_file" "trades_transform" {
 }
 
 resource "aws_lambda_function" "trades_transform" {
-  function_name    = "${var.project_name}-silver-trades-transform"
-  role             = aws_iam_role.lambda_athena_transform.arn
-  handler          = "trades_handler.handler"
-  runtime          = "python3.12"
-  timeout          = var.lambda_timeout_seconds
-  memory_size      = 128
+  function_name = "${var.project_name}-silver-trades-transform"
+  role          = aws_iam_role.lambda_athena_transform.arn
+  handler       = "trades_handler.handler"
+  runtime       = "python3.12"
+  timeout       = var.lambda_timeout_seconds
+  memory_size   = 128
 
   filename         = data.archive_file.trades_transform.output_path
   source_code_hash = data.archive_file.trades_transform.output_base64sha256
@@ -85,12 +85,12 @@ data "archive_file" "market_snapshot_transform" {
 }
 
 resource "aws_lambda_function" "market_snapshot_transform" {
-  function_name    = "${var.project_name}-silver-market-snapshot-transform"
-  role             = aws_iam_role.lambda_athena_transform.arn
-  handler          = "market_snapshot_handler.handler"
-  runtime          = "python3.12"
-  timeout          = var.lambda_timeout_seconds
-  memory_size      = 128
+  function_name = "${var.project_name}-silver-market-snapshot-transform"
+  role          = aws_iam_role.lambda_athena_transform.arn
+  handler       = "market_snapshot_handler.handler"
+  runtime       = "python3.12"
+  timeout       = var.lambda_timeout_seconds
+  memory_size   = 128
 
   filename         = data.archive_file.market_snapshot_transform.output_path
   source_code_hash = data.archive_file.market_snapshot_transform.output_base64sha256
@@ -130,12 +130,12 @@ data "archive_file" "anomalias_transform" {
 }
 
 resource "aws_lambda_function" "anomalias_transform" {
-  function_name    = "${var.project_name}-gold-anomalias-transform"
-  role             = aws_iam_role.lambda_athena_transform.arn
-  handler          = "anomalias_handler.handler"
-  runtime          = "python3.12"
-  timeout          = var.lambda_timeout_seconds
-  memory_size      = 128
+  function_name = "${var.project_name}-gold-anomalias-transform"
+  role          = aws_iam_role.lambda_athena_transform.arn
+  handler       = "anomalias_handler.handler"
+  runtime       = "python3.12"
+  timeout       = var.lambda_timeout_seconds
+  memory_size   = 128
 
   filename         = data.archive_file.anomalias_transform.output_path
   source_code_hash = data.archive_file.anomalias_transform.output_base64sha256

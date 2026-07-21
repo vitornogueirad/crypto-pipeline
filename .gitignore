@@ -5,7 +5,11 @@
 response.json
 .terraform
 build/
-infra/streaming/tfplan
+tfplan
+
+# Scratch de teste manual (Lambda invoke)
+out.json
+backfill.json
 
 # Python
 __pycache__/

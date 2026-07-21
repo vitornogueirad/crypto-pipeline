@@ -1,0 +1,2 @@
+data_lake_bucket = "crypto-pipeline-datalake-XXXXXXXXXXXX"
+aws_region       = "us-east-1"

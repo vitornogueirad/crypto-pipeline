@@ -1,6 +1,5 @@
-ruff
+ruff==0.15.20
 pytest
 pytest-asyncio
 boto3
 websockets
-pytest-asyncio

@@ -185,7 +185,7 @@ async def main():
 
     fila: asyncio.Queue = asyncio.Queue(maxsize=MAX_QUEUE)
 
-    # 1. Transformamos as corrotinas em Tarefas (Tasks) gerenciadas pelo loop
+    # Transformamos as corrotinas em Tarefas (Tasks) gerenciadas pelo loop
     tarefa_produtor = asyncio.create_task(receber_trades(fila))
     tarefa_consumidor = asyncio.create_task(enviar_para_kinesis(fila))
 

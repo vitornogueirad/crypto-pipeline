@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2470" viewBox="0 0 1440 2470" font-family="-apple-system,&#39;Segoe UI&#39;,Helvetica,Arial,sans-serif">
+
+<rect width="1440" height="2470" fill="#0b0e14"></rect>
+<text x="40" y="64" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="14" fill="#8b94a3">vitornogueirad/crypto-pipeline</text>
+<text x="40" y="106" font-size="34" font-weight="700" fill="#e6e9ef">Arquitetura do pipeline de dados</text>
+<text x="40" y="138" fill="#8b94a3" font-size="15">Ingestão em streaming (Binance) e em batch (CoinGecko) para um data lake em S3,</text>
+<text x="40" y="160" fill="#8b94a3" font-size="15">com transformações bronze → silver → gold via MERGE INTO e UPSERT no Athena sobre tabelas Iceberg.</text>
+<g font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" fill="#8b94a3">
+  <line x1="1128" y1="60" x2="1152" y2="60" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="4 5"></line>
+  <text x="1162" y="64">fluxo de dados</text>
+  <rect x="1128" y="78" width="12" height="12" rx="3" fill="#67c3e8"></rect>
+  <text x="1162" y="88">caminho streaming</text>
+  <rect x="1128" y="102" width="12" height="12" rx="3" fill="#d9a13f"></rect>
+  <text x="1162" y="112">caminho batch</text>
+</g>
+<g transform="translate(40,210)">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b94a3"></path>
+    </marker>
+  </defs>
+  <g stroke="#2a3444" stroke-width="2" fill="none" marker-end="url(#arr)">
+    <path d="M290 172 V224"></path><path d="M290 340 V392"></path><path d="M290 492 V544"></path>
+    <path d="M460 600 H522"></path><path d="M522 624 H466"></path>
+    <path d="M460 648 C496 648, 496 726, 522 726"></path>
+    <path d="M290 672 V844"></path><path d="M1070 172 V292"></path><path d="M850 290 H892"></path><path d="M850 406 H892"></path>
+    <path d="M1070 420 V844"></path><path d="M290 1002 V1184"></path><path d="M1070 1002 V1184"></path>
+    <path d="M680 1132 C680 1172, 290 1142, 290 1184"></path><path d="M680 1132 C680 1172, 1070 1142, 1070 1184"></path>
+    <path d="M290 1292 V1344"></path><path d="M1070 1292 V1344"></path>
+    <path d="M680 1482 V1534"></path><path d="M680 1642 V1694"></path><path d="M680 1832 V1884"></path>
+  </g>
+  <g>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M290 172 V224"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M290 340 V392"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M290 492 V544"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M460 600 H522"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M522 624 H466"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M460 648 C496 648, 496 726, 522 726"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M290 672 V844"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M1070 172 V292"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M850 290 H892"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M850 406 H892"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M1070 420 V844"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M290 1002 V1184"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M1070 1002 V1184"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M680 1132 C680 1172, 290 1142, 290 1184"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M680 1132 C680 1172, 1070 1142, 1070 1184"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M290 1292 V1344"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M1070 1292 V1344"></path>
+    <path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M680 1482 V1534"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M680 1642 V1694"></path><path class="flow" stroke="#7dd3fc" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.85" d="M680 1832 V1884"></path>
+  </g>
+
+  
+  <rect x="120" y="80" width="340" height="92" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <path d="M130 81.5 H450" stroke="#67c3e8" stroke-width="3"></path>
+  <text x="136" y="106" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#67c3e8">FONTE · WEBSOCKET</text>
+  <text x="136" y="130" font-size="18" font-weight="600" fill="#e6e9ef">Binance @aggTrade</text>
+  <text x="136" y="152" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12.5" fill="#8b94a3">btcusdt · ethusdt · solusdt · adausdt</text>
+
+  <rect x="900" y="80" width="340" height="92" rx="10" fill="#11161f" stroke="#34301f"></rect>
+  <path d="M910 81.5 H1230" stroke="#d9a13f" stroke-width="3"></path>
+  <text x="916" y="106" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#d9a13f">FONTE · REST API</text>
+  <text x="916" y="130" font-size="18" font-weight="600" fill="#e6e9ef">CoinGecko API</text>
+  <text x="916" y="152" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12.5" fill="#8b94a3">/coins/markets · preços e market cap</text>
+
+  
+  <rect x="120" y="232" width="340" height="108" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <text x="136" y="256" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#8b94a3">CONTAINER · ON-DEMAND</text>
+  <text x="136" y="280" font-size="18" font-weight="600" fill="#e6e9ef">Producer (Python asyncio)</text>
+  <text x="136" y="302" font-size="12.5" fill="#8b94a3">Fila com backpressure · lotes de 500 · retry</text>
+  <text x="136" y="320" font-size="12.5" fill="#8b94a3">parcial com backoff · reconexão do WebSocket</text>
+  <text x="298" y="364" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">put_records em lote</text>
+
+  <rect x="120" y="400" width="340" height="92" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <text x="136" y="424" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · KINESIS DATA STREAMS</text>
+  <text x="136" y="448" font-size="18" font-weight="600" fill="#e6e9ef">Stream de trades</text>
+  <text x="136" y="470" font-size="12.5" fill="#8b94a3">Partition key symbol-tradeId — evita hot shard</text>
+
+  <rect x="120" y="552" width="340" height="120" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <text x="136" y="576" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · LAMBDA</text>
+  <text x="136" y="600" font-size="18" font-weight="600" fill="#e6e9ef">Consumer de trades</text>
+  <text x="136" y="622" font-size="12.5" fill="#8b94a3">Dedup em memória + DynamoDB · rollback das</text>
+  <text x="136" y="640" font-size="12.5" fill="#8b94a3">marcas se o S3 falhar · reporta batchItemFailures</text>
+
+  <rect x="530" y="566" width="230" height="92" rx="10" fill="#11161f" stroke="#233044" stroke-dasharray="4 4"></rect>
+  <text x="544" y="590" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · DYNAMODB</text>
+  <text x="544" y="612" font-size="16" font-weight="600" fill="#e6e9ef">Dedup</text>
+  <text x="544" y="634" font-size="12.5" fill="#8b94a3">put condicional · TTL 6h</text>
+  <text x="530" y="678" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">check-and-set / rollback</text>
+
+  <rect x="530" y="696" width="230" height="90" rx="10" fill="#11161f" stroke="#233044" stroke-dasharray="4 4"></rect>
+  <text x="544" y="720" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · SQS</text>
+  <text x="544" y="742" font-size="16" font-weight="600" fill="#e6e9ef">DLQ do consumer</text>
+  <text x="544" y="762" font-size="12.5" fill="#8b94a3">registros com retries do</text>
+  <text x="544" y="778" font-size="12.5" fill="#8b94a3">Kinesis esgotados</text>
+  <text x="298" y="708" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">1 arquivo JSONL por batch</text>
+
+  
+  <rect x="620" y="252" width="230" height="76" rx="10" fill="#11161f" stroke="#34301f" stroke-dasharray="4 4"></rect>
+  <text x="634" y="276" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · EVENTBRIDGE</text>
+  <text x="634" y="300" font-size="16" font-weight="600" fill="#e6e9ef">Agendamento 1×/hora</text>
+
+  <rect x="620" y="368" width="230" height="76" rx="10" fill="#11161f" stroke="#34301f" stroke-dasharray="4 4"></rect>
+  <text x="634" y="392" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · SECRETS MANAGER</text>
+  <text x="634" y="416" font-size="16" font-weight="600" fill="#e6e9ef">API key CoinGecko</text>
+
+  <rect x="900" y="300" width="340" height="120" rx="10" fill="#11161f" stroke="#34301f"></rect>
+  <text x="916" y="324" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · LAMBDA</text>
+  <text x="916" y="348" font-size="18" font-weight="600" fill="#e6e9ef">Ingestão CoinGecko</text>
+  <text x="916" y="370" font-size="12.5" fill="#8b94a3">Busca market data e grava JSON Lines</text>
+  <text x="916" y="388" font-size="12.5" fill="#8b94a3">cru com ingested_at</text>
+  <text x="1078" y="572" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">1 arquivo por hora</text>
+
+  
+  <rect x="120" y="852" width="1120" height="150" rx="10" fill="#17110a" stroke="#3d2c1a"></rect>
+  <rect x="120" y="862" width="4" height="130" fill="#b0743a"></rect>
+  <text x="144" y="884" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" font-weight="600" fill="#c98d4f">CAMADA BRONZE</text>
+  <text x="292" y="884" fill="#8b94a3" font-size="13">S3 — dado cru, JSON Lines</text>
+  <rect x="144" y="900" width="126" height="34" rx="6" fill="#0b0e14" stroke="#3d2c1a"></rect>
+  <text x="160" y="922" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="13" fill="#e6e9ef">bronze.trades</text>
+  <rect x="282" y="900" width="152" height="34" rx="6" fill="#0b0e14" stroke="#3d2c1a"></rect>
+  <text x="298" y="922" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="13" fill="#e6e9ef">bronze.coingecko</text>
+  <text x="144" y="966" font-size="12.5" fill="#8b94a3">Partição Hive-style year/month/day/hour · partition projection (dispensa crawler e MSCK REPAIR)</text>
+
+  
+  <rect x="530" y="1062" width="300" height="70" rx="10" fill="#11161f" stroke="#233044" stroke-dasharray="4 4"></rect>
+  <text x="680" y="1086" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a" text-anchor="middle">AWS · EVENTBRIDGE</text>
+  <text x="680" y="1110" font-size="16" font-weight="600" fill="#e6e9ef" text-anchor="middle">Disparo periódico</text>
+
+  <rect x="120" y="1192" width="340" height="100" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <text x="136" y="1216" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · LAMBDA + ATHENA</text>
+  <text x="136" y="1240" font-weight="600" fill="#e6e9ef" font-size="17">Transform silver.trades</text>
+  <text x="136" y="1262" font-size="12.5" fill="#8b94a3">Hora atual + anterior · modo backfill opcional</text>
+
+  <rect x="900" y="1192" width="340" height="100" rx="10" fill="#11161f" stroke="#34301f"></rect>
+  <text x="916" y="1216" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · LAMBDA + ATHENA</text>
+  <text x="916" y="1240" font-weight="600" fill="#e6e9ef" font-size="17">Transform silver.market_snapshot</text>
+  <text x="916" y="1262" font-size="12.5" fill="#8b94a3">Mesmo runner comum · falha parcial não bloqueia</text>
+
+  <text x="298" y="1316" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">MERGE INTO (idempotente)</text>
+  <text x="1078" y="1316" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">MERGE INTO (idempotente)</text>
+
+  
+  <rect x="120" y="1352" width="1120" height="130" rx="10" fill="#141821" stroke="#2c3442"></rect>
+  <rect x="120" y="1362" width="4" height="110" fill="#aab2c0"></rect>
+  <text x="144" y="1384" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" font-weight="600" fill="#c3cad6">CAMADA SILVER</text>
+  <text x="286" y="1384" fill="#8b94a3" font-size="13">Tabelas Iceberg (Parquet) — dado limpo e tipado</text>
+  <rect x="144" y="1400" width="122" height="34" rx="6" fill="#0b0e14" stroke="#2c3442"></rect>
+  <text x="160" y="1422" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="13" fill="#e6e9ef">silver.trades</text>
+  <rect x="278" y="1400" width="196" height="34" rx="6" fill="#0b0e14" stroke="#2c3442"></rect>
+  <text x="294" y="1422" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="13" fill="#e6e9ef">silver.market_snapshot</text>
+
+  
+  <rect x="510" y="1542" width="340" height="100" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <text x="526" y="1566" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#e8863a">AWS · LAMBDA + ATHENA</text>
+  <text x="526" y="1590" font-weight="600" fill="#e6e9ef" font-size="17">Transform gold.anomalias</text>
+  <text x="526" y="1612" font-size="12.5" fill="#8b94a3">Baseline móvel 6h (window function) ·</text>
+  <text x="526" y="1628" font-size="12.5" fill="#8b94a3">sem filtro de partição</text>
+  <text x="688" y="1666" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" fill="#5c6675">MERGE INTO (upsert · WHEN MATCHED)</text>
+
+  <rect x="120" y="1702" width="1120" height="130" rx="10" fill="#17140a" stroke="#3f3617"></rect>
+  <rect x="120" y="1712" width="4" height="110" fill="#d3b13c"></rect>
+  <text x="144" y="1734" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" font-weight="600" fill="#dcc25e">CAMADA GOLD</text>
+  <text x="276" y="1734" fill="#8b94a3" font-size="13">Tabela Iceberg — métricas de negócio</text>
+  <rect x="144" y="1750" width="140" height="34" rx="6" fill="#0b0e14" stroke="#3f3617"></rect>
+  <text x="160" y="1772" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="13" fill="#e6e9ef">gold.anomalias</text>
+  <text x="300" y="1772" font-size="12.5" fill="#8b94a3">VWAP · volume total · z-score vs. baseline · flag de anomalia</text>
+
+  
+  <rect x="430" y="1892" width="500" height="90" rx="10" fill="#11161f" stroke="#233044"></rect>
+  <text x="680" y="1916" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="11" letter-spacing="1" font-weight="600" fill="#8b94a3" text-anchor="middle">CONSUMO</text>
+  <text x="680" y="1940" font-size="18" font-weight="600" fill="#e6e9ef" text-anchor="middle">Athena SQL</text>
+  <text x="680" y="1962" font-size="12.5" fill="#8b94a3" text-anchor="middle">Consultas ad-hoc sobre bronze, silver e gold</text>
+
+  
+  <rect x="120" y="2022" width="1120" height="56" rx="10" fill="#11161f" stroke="#233044" stroke-dasharray="4 4"></rect>
+  <text x="144" y="2056" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#5c6675">OBSERVABILIDADE</text>
+  <text x="300" y="2056" fill="#8b94a3" font-size="13">CloudWatch Alarms — erros do consumer e das 3 Lambdas de transformação</text>
+  <text x="790" y="2056" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" fill="#5c6675">→</text>
+  <text x="812" y="2056" fill="#8b94a3" font-size="13">tópico SNS — notificação de falhas</text>
+
+  
+  <rect x="120" y="2148" width="1120" height="50" rx="10" fill="none" stroke="#233044" stroke-dasharray="4 4"></rect>
+  <text x="144" y="2179" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#5c6675">CI/CD</text>
+  <text x="230" y="2179" font-family="ui-monospace,&#39;SF Mono&#39;,Menlo,Consolas,monospace" font-size="12" fill="#8b94a3">GitHub Actions · pytest (43 testes) · Docker build do producer · infra via Terraform</text>
+</g>
+</svg>

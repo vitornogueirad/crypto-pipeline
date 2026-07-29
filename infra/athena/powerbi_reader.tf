@@ -78,9 +78,9 @@ resource "aws_iam_user_policy" "powerbi_reader" {
         Resource = "*"
       },
       {
-        Sid      = "ReadDataLake"
-        Effect   = "Allow"
-        Action   = ["s3:GetObject", "s3:ListBucket"]
+        Sid    = "ReadDataLake"
+        Effect = "Allow"
+        Action = ["s3:GetObject", "s3:ListBucket"]
         Resource = [
           "arn:aws:s3:::${var.data_lake_bucket}",
           "arn:aws:s3:::${var.data_lake_bucket}/*"

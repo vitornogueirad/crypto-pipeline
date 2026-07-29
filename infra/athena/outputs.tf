@@ -29,3 +29,8 @@ output "market_snapshot_transform_lambda_name" {
 output "anomalias_transform_lambda_name" {
   value = aws_lambda_function.anomalias_transform.function_name
 }
+
+output "powerbi_reader_user_name" {
+  value       = aws_iam_user.powerbi_reader.name
+  description = "Usuário IAM para o Power BI. Gere a access key manualmente após o apply."
+}

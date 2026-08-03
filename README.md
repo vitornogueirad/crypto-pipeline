@@ -13,6 +13,8 @@ A camada `gold.anomalias` cruza as duas fontes para identificar quando o comport
 
 Ativos monitorados: **Bitcoin, Ethereum, Solana, Cardano** (BTC, ETH, SOL, ADA).
 
+![Arquitetura](docs/PowerBI.png)
+
 ## Arquitetura
 
 
@@ -31,7 +33,7 @@ Ativos monitorados: **Bitcoin, Ethereum, Solana, Cardano** (BTC, ETH, SOL, ADA).
 | 2b | Producer WebSocket Binance (async, resiliente, testado) | ✅ Completo |
 | 3 | Silver layer (Athena + Iceberg): tipagem, dedup residual, backfill | ✅ Completo, validado com dado real |
 | 4 | Gold layer (`gold.anomalias`): VWAP + baseline móvel + z-score | ✅ Completo, validado com dado real |
-| 5 | Power BI conectado ao Athena | 🔜 Próxima etapa |
+| 5 | Power BI conectado ao Athena | ✅ Completo, validado com dado real
 
 ## Stack técnico
 
@@ -47,7 +49,7 @@ Ativos monitorados: **Bitcoin, Ethereum, Solana, Cardano** (BTC, ETH, SOL, ADA).
 - **IaC:** Terraform (módulos por etapa: `infra/`, `infra/streaming/`, `infra/athena/`)
 - **Testes:** pytest, pytest-asyncio, mocks de boto3 (sem custo de AWS real)
 - **CI:** GitHub Actions
-- **Visualização:** Power BI (conector nativo Athena via ODBC/Simba) — pendente
+- **Visualização:** Power BI (conector nativo Athena via ODBC)
 
 ## Estrutura do repositório
 
@@ -221,6 +223,5 @@ python -m pytest tests/ -v
 
 ## Roadmap
 
-- [ ] Conectar Power BI ao Athena (conector nativo, via ODBC/Simba) — visualização de `gold.anomalias`
 - [ ] Ajustar o limiar do z-score (hoje 3 desvios) com base em dado real de produção
 - [ ] Reavaliar o custo do full-scan da query de gold conforme o histórico crescer

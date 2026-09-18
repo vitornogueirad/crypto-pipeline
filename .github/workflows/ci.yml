@@ -58,22 +58,20 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Configure Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           
-      - name: Install MkDocs Material and Dependencies
-        run: |
-          pip install mkdocs-material ghp-import
+      - name: Install MkDocs Material
+        run: pip install mkdocs-material
         
-      - name: Configure Git User
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@://github.com"
+      - name: Build Documentation Site
+        run: mkdocs build
 
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-pages --force
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

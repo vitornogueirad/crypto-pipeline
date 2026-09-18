@@ -13,12 +13,12 @@ A camada `gold.anomalias` cruza as duas fontes para identificar quando o comport
 
 Ativos monitorados: **Bitcoin, Ethereum, Solana, Cardano** (BTC, ETH, SOL, ADA).
 
-![Arquitetura](docs/PowerBI.png)
+![Arquitetura](PowerBI.png)
 
 ## Arquitetura
 
 
-![Arquitetura](docs/arquitetura.svg)
+![Arquitetura](arquitetura.svg)
 
  Por baixo de tudo: Glue Data Catalog (bronze/silver/gold) + Athena Workgroup
  (trava de custo por query) + CloudWatch Alarms/SNS nas 3 Lambdas de transformação

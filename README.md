@@ -2,6 +2,8 @@
 
 Pipeline de dados end-to-end para detecção de anomalias de preço e volume em criptoativos, combinando ingestão **batch** (baseline histórico) e **streaming em tempo real** (sinal de mercado), 100% em AWS com infraestrutura como código.
 
+Documentação: https://vitornogueirad.github.io/crypto-pipeline/
+
 ## Contexto e motivação
 
 Preço de um ativo, isolado, diz pouco. O que importa é o **desvio em relação ao comportamento recente**. Este projeto constrói duas fontes de dados complementares para permitir essa comparação:

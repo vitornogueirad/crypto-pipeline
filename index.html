@@ -1,0 +1,878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Crypto Pipeline Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#crypto-pipeline" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Crypto Pipeline Documentation" class="md-header__button md-logo" aria-label="Crypto Pipeline Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crypto Pipeline Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🪙 crypto-pipeline
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Crypto Pipeline Documentation" class="md-nav__button md-logo" aria-label="Crypto Pipeline Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Crypto Pipeline Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪙 crypto-pipeline
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪙 crypto-pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexto-e-motivacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexto e motivação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitetura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status do projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-tecnico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack técnico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-rodar-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como rodar localmente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisoes-de-arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisões de arquitetura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decisões de arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ingestao-e-streaming-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingestão e streaming (bronze)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silver-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silver layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gold-layer-goldanomalias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gold layer (gold.anomalias)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infraestrutura-e-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infraestrutura e operação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestao-de-custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestão de custos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexto-e-motivacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexto e motivação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitetura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status do projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-tecnico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack técnico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-rodar-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como rodar localmente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisoes-de-arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisões de arquitetura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decisões de arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ingestao-e-streaming-bronze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingestão e streaming (bronze)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silver-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silver layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gold-layer-goldanomalias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gold layer (gold.anomalias)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infraestrutura-e-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infraestrutura e operação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestao-de-custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestão de custos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="crypto-pipeline">🪙 crypto-pipeline</h1>
+<p>Pipeline de dados end-to-end para detecção de anomalias de preço e volume em criptoativos, combinando ingestão <strong>batch</strong> (baseline histórico) e <strong>streaming em tempo real</strong> (sinal de mercado), 100% em AWS com infraestrutura como código.</p>
+<h2 id="contexto-e-motivacao">Contexto e motivação</h2>
+<p>Preço de um ativo, isolado, diz pouco. O que importa é o <strong>desvio em relação ao comportamento recente</strong>. Este projeto constrói duas fontes de dados complementares para permitir essa comparação:</p>
+<ul>
+<li><strong>CoinGecko (batch)</strong> — captura periódica de preço/volume/market cap, servindo como <strong>baseline histórico</strong> de cada ativo.</li>
+<li><strong>Binance WebSocket (streaming)</strong> — trades em tempo real (<code>aggTrade</code>), servindo como <strong>sinal ao vivo</strong> do mercado.</li>
+</ul>
+<p>A camada <code>gold.anomalias</code> cruza as duas fontes para identificar quando o comportamento em tempo real se desvia do padrão histórico recente — o objetivo final do pipeline.</p>
+<p>Ativos monitorados: <strong>Bitcoin, Ethereum, Solana, Cardano</strong> (BTC, ETH, SOL, ADA).</p>
+<p><img alt="Arquitetura" src="docs/PowerBI.png" /></p>
+<h2 id="arquitetura">Arquitetura</h2>
+<p><img alt="Arquitetura" src="docs/arquitetura.svg" /></p>
+<p>Por baixo de tudo: Glue Data Catalog (bronze/silver/gold) + Athena Workgroup
+ (trava de custo por query) + CloudWatch Alarms/SNS nas 3 Lambdas de transformação</p>
+<h2 id="status-do-projeto">Status do projeto</h2>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Descrição</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ingestão batch (Lambda + EventBridge + S3 + Secrets Manager + Budgets)</td>
+<td>✅ Implantado e validado</td>
+</tr>
+<tr>
+<td>2a</td>
+<td>Infra de streaming (Kinesis + Lambda consumer + DynamoDB + SQS DLQ + CloudWatch)</td>
+<td>✅ Validado end-to-end, efêmero (destruído/recriado por ciclo)</td>
+</tr>
+<tr>
+<td>2b</td>
+<td>Producer WebSocket Binance (async, resiliente, testado)</td>
+<td>✅ Completo</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Silver layer (Athena + Iceberg): tipagem, dedup residual, backfill</td>
+<td>✅ Completo, validado com dado real</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Gold layer (<code>gold.anomalias</code>): VWAP + baseline móvel + z-score</td>
+<td>✅ Completo, validado com dado real</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Power BI conectado ao Athena</td>
+<td>✅ Completo, validado com dado real</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stack-tecnico">Stack técnico</h2>
+<ul>
+<li><strong>Ingestão:</strong> Python (<code>asyncio</code>, <code>websockets</code>, <code>boto3</code>), AWS Lambda</li>
+<li><strong>Streaming:</strong> Amazon Kinesis Data Streams (on-demand)</li>
+<li><strong>Dedup (bronze):</strong> Amazon DynamoDB (conditional writes)</li>
+<li><strong>Storage bronze:</strong> Amazon S3 (JSON, particionado Hive + partition projection)</li>
+<li><strong>Storage silver/gold:</strong> Amazon S3 + <strong>Apache Iceberg</strong> (particionamento oculto, <code>MERGE INTO</code>, schema evolution)</li>
+<li><strong>Motor de transformação:</strong> <strong>Amazon Athena</strong> (SQL, serverless — sem cluster Spark)</li>
+<li><strong>Metastore:</strong> <strong>AWS Glue Data Catalog</strong></li>
+<li><strong>Orquestração das transformações:</strong> EventBridge (schedule) → Lambda → <code>athena.start_query_execution()</code></li>
+<li><strong>Observabilidade:</strong> CloudWatch (alarms, logs, métricas), SNS (e-mail), SQS (dead-letter queue)</li>
+<li><strong>IaC:</strong> Terraform (módulos por etapa: <code>infra/</code>, <code>infra/streaming/</code>, <code>infra/athena/</code>)</li>
+<li><strong>Testes:</strong> pytest, pytest-asyncio, mocks de boto3 (sem custo de AWS real)</li>
+<li><strong>CI:</strong> GitHub Actions</li>
+<li><strong>Visualização:</strong> Power BI (conector nativo Athena via ODBC)</li>
+</ul>
+<h2 id="estrutura-do-repositorio">Estrutura do repositório</h2>
+<pre><code>crypto-pipeline/
+├── infra/
+│   ├── (Etapa 1 — batch: Lambda, S3, Secrets, Budgets, IAM)
+│   ├── streaming/     (Etapa 2a — Kinesis, consumer Lambda, DynamoDB, SQS, alarms)
+│   └── athena/         (Etapa 3+4 — Glue DBs, Workgroup, staging bucket, 3 Lambdas,
+│                         EventBridge, IAM, alarmes SNS)
+├── sql/
+│   └── ddl/            (DDL rodado manualmente 1x — bronze, silver e gold)
+│       ├── bronze_tables.sql
+│       ├── silver_tables.sql
+│       └── gold_tables.sql
+├── src/
+│   ├── ingestion/coingecko/handler.py       # Lambda de ingestão batch
+│   ├── consumer/trades/handler.py           # Lambda consumer do Kinesis
+│   ├── producer/binance/producer.py         # Producer WebSocket → Kinesis
+│   └── transform/
+│       ├── common/                          # compartilhado pelas 3 Lambdas de transformação
+│       │   ├── athena_executor.py           # dispara query, faz polling até concluir
+│       │   ├── partitions.py                # calcula partições (hora atual + anterior)
+│       │   └── transform_runner.py          # orquestra partições, modo incremental/backfill
+│       ├── silver/
+│       │   ├── trades_handler.py            + silver_trades_merge.sql
+│       │   └── market_snapshot_handler.py   + silver_market_snapshot_merge.sql
+│       └── gold/
+│           └── anomalias_handler.py         + gold_anomalias_merge.sql
+├── tests/               (43 testes — producer, consumer, ingestão, silver, gold)
+└── .github/workflows/ci.yml
+</code></pre>
+<h2 id="como-rodar-localmente">Como rodar localmente</h2>
+<p><strong>Testes</strong> (sem AWS real, tudo mockado):</p>
+<pre><code class="language-bash">python -m pytest tests/ -v
+</code></pre>
+<p><strong>Producer contra a Binance real</strong> (requer credenciais AWS e infra de streaming aplicada):</p>
+<pre><code class="language-powershell">$env:KINESIS_STREAM_NAME = &quot;&lt;nome do stream&gt;&quot;
+$env:AWS_REGION = &quot;us-east-1&quot;
+$env:AWS_PROFILE = &quot;&lt;seu profile&gt;&quot;
+$env:SYMBOLS = &quot;btcusdt,ethusdt,solusdt,adausdt&quot;
+
+python src/producer/binance/producer.py
+</code></pre>
+<p><strong>Infraestrutura</strong> (cada módulo é aplicado/destruído independente — states separados):</p>
+<pre><code class="language-powershell">cd infra\athena     # ou infra\streaming, ou infra\ (raiz)
+terraform init
+terraform plan -out=tfplan
+terraform apply tfplan
+</code></pre>
+<p><strong>Disparo manual de uma Lambda de transformação</strong> (fora do schedule do EventBridge):</p>
+<pre><code class="language-powershell"># Modo incremental (padrão — hora atual + anterior)
+aws lambda invoke --function-name crypto-pipeline-silver-trades-transform --profile &lt;profile&gt; --payload '{}' out.json
+
+# Modo backfill (carga histórica, uma vez só)
+aws lambda invoke --function-name crypto-pipeline-silver-market-snapshot-transform --profile &lt;profile&gt; --payload '{&quot;backfill&quot;: true}' out.json
+</code></pre>
+<p>No Windows, se o <code>--payload</code> inline der erro de encoding, use o console do Lambda (aba <strong>Test</strong>) — mais confiável que lidar com escaping de aspas no PowerShell.</p>
+<h2 id="decisoes-de-arquitetura">Decisões de arquitetura</h2>
+<h3 id="ingestao-e-streaming-bronze">Ingestão e streaming (bronze)</h3>
+<p><strong>Kinesis Data Streams (on-demand)</strong> foi escolhido pelo alinhamento entre modelo de cobrança e perfil de uso: cobra por volume ingerido, sem infraestrutura ociosa, adequado a um producer que roda sob demanda, não 24/7.</p>
+<p><strong>Partition key: <code>symbol + aggTradeId</code>.</strong> Evita hot shards, se a chave fosse só o símbolo, os 4 ativos concentrariam trades em poucas partições. A ordenação temporal necessária para análise não depende da partição: o campo <code>trade_time</code>, embutido no registro, é usado para agregação por janela na leitura.</p>
+<p><strong><code>@aggTrade</code> em vez de <code>@trade</code>.</strong> Agrega múltiplas execuções ao mesmo preço em um único evento — menos mensagens, mesma informação relevante.</p>
+<p><strong>Producer assíncrono com fila interna produtor-consumidor.</strong> Duas corrotinas conectadas por uma <code>asyncio.Queue</code>: uma recebe do WebSocket continuamente, outra drena e envia ao Kinesis em lote — desacopla a taxa de chegada da taxa de flush.</p>
+<p><strong>Producer on-demand, não Fargate 24/7.</strong> O producer roda sob demanda (execução local ou container pontual para janelas de captura), não como serviço contínuo no Fargate. A decisão é de custo-benefício: manter um container 24/7 gera custo fixo contínuo desproporcional para um pipeline de portfólio</p>
+<p><strong><code>boto3</code> síncrono via <code>asyncio.to_thread</code>, aioboto3/aiobotocore foram avaliados e descartados.</strong> O aiobotocore implementa async sobrescrevendo métodos internos (não-públicos) do botocore, o que o obriga a pinnar o botocore em faixas de versão estreitas, histórico documentado de conflitos de dependência downstream. O ganho de I/O nativamente assíncrono só compensa sob alta concorrência de chamadas à AWS; no projeto é um put_records a cada ~2s. boto3 síncrono despachado via asyncio.to_thread é o padrão recomendado pela documentação do asyncio para bibliotecas de I/O síncronas em contexto assíncrono: não bloqueia o event loop (nem o WebSocket) e mantém dependência apenas no SDK oficial, sem acoplamento a internals.</p>
+<p><strong>Resiliência do producer.</strong> Retry limitado a 3 tentativas com backoff exponencial, sem recursão infinita, que travaria o loop de envio. Ao esgotar tentativas, os trades voltam à fila principal em vez de serem descartados. Se a fila estiver cheia no reenfileiramento, descarta com log.</p>
+<p><strong>Shutdown gracioso no Windows.</strong> <code>loop.add_signal_handler()</code> sempre levanta <code>NotImplementedError</code> no Windows — o handler gracioso nunca é instalado localmente. O <code>KeyboardInterrupt</code> é capturado no entrypoint (<code>try/except</code> em torno do <code>asyncio.run()</code>) pra evitar traceback cru no Ctrl+C local. Em produção (container Linux), o shutdown gracioso completo funciona normalmente.</p>
+<p><strong>Deduplicação via DynamoDB (conditional writes).</strong> <code>attribute_not_exists</code> como condição de escrita garante idempotência distribuída. A alternativa (<code>dropDuplicates</code> na silver) exportaria o problema de dedup pra uma etapa posterior, menos rastreável. Otimizações: dedup em memória dentro do próprio lote + <code>ThreadPoolExecutor</code> de 25 workers reduziram o tempo de processamento de ~3.5s para ~140ms. TTL de 6h no DynamoDB é suficiente pra cobrir reprocessamento sem acumular estado indefinidamente.</p>
+<p><strong>1 arquivo por lote.</strong> Trade-off consciente do problema de small files, priorizando rastreabilidade lote → arquivo. ESM: até 500 registros ou 10s, o que ocorrer primeiro.</p>
+<p><strong>Confiabilidade do Event Source Mapping (ESM).</strong> <code>ReportBatchItemFailures</code> (falha parcial, não tudo-ou-nada) + <code>BisectBatchOnFunctionError</code> (isola o registro problemático) + <code>MaximumRetryAttempts=3</code> + <code>MaximumRecordAgeInSeconds=3600</code>, com SQS DLQ como destino final.</p>
+<p><strong>Padrão saga/compensação.</strong> Se a marca de dedup é gravada no DynamoDB mas a escrita no S3 falha depois, o handler executa <code>delete_item</code> de compensação (rollback best-effort). O TTL de 6h é a salvaguarda pra qualquer rollback que também falhe.</p>
+<p><strong><code>IteratorAge</code> como métrica de lag.</strong> Indicador de disponibilidade (SLI) do streaming — se crescer, o consumer processa mais devagar do que os dados chegam.</p>
+<p><strong>Retenção do Kinesis: 24h (padrão).</strong> Kinesis é transporte, não storage — os dados persistem no S3; a retenção só cobre uma eventual janela de reprocessamento.</p>
+<p><strong><code>price</code>/<code>quantity</code> como STRING até a silver.</strong> A Binance envia esses campos como string intencionalmente. Converter para <code>float</code> no bronze introduziria erro de arredondamento binário (<code>0.1+0.2=0.30000000000000004</code>). A tipagem correta (<code>DecimalType</code>/<code>DECIMAL(38,8)</code>) acontece na silver, onde os cálculos de fato ocorrem.</p>
+<h3 id="silver-layer">Silver layer</h3>
+<p><strong>Motor: Athena (SQL)</strong> O trabalho necessário (cast de tipo, parse de timestamp, dedup residual, união lógica) é inteiramente expressável em SQL declarativo — não exige processamento distribuído. Athena cobra só por TB escaneado, sem cluster nem tempo mínimo de warm-up.</p>
+<p><strong>Formato de tabela: Apache Iceberg (silver/gold), não tabelas Hive convencionais.</strong> O formato de arquivo continua sendo Parquet, Iceberg é a camada transacional de metadados sobre ele. Resolve dois problemas reais que apareceram durante o desenvolvimento: schema evolution (adicionar/alterar coluna sem recriar a tabela nem reprocessar histórico) e MERGE INTO/upsert nativo e atômico, sem ele, cada atualização da gold exigiria ROW_NUMBER() + INSERT OVERWRITE manual: reescrita da partição inteira, sem atomicidade em caso de falha no meio da operação. A bronze permanece como external table Hive convencional com partition projection, dado imutável append-only não precisa de transação.</p>
+<p><strong>Particionamento oculto (<code>PARTITIONED BY (day(ingested_at))</code>), não pastas manuais.</strong> O Iceberg gerencia partição no metadado da tabela, não existe mais <code>year=/month=/day=/hour=</code> como estrutura física que a query precisa conhecer. Interação sempre via SQL; a organização física interna (inclusive nomes de arquivo/diretório gerados pelo engine) pode mudar entre versões sem quebrar nada.</p>
+<p><strong>Bronze com partition projection, não Crawler/MSCK REPAIR.</strong> O Athena calcula as partições existentes a partir do padrão de path na hora da query, dispensando um Crawler agendado ou uma chamada explícita de <code>MSCK REPAIR TABLE</code> a cada nova hora criada.</p>
+<p><strong>Dois databases Glue via Terraform, tabelas via script DDL manual.</strong> Mesma lógica do <code>secrets.tf</code>: infraestrutura (recurso com ARN, IAM associada) via Terraform; schema (DDL de tabela) via script, rodado uma vez.</p>
+<p><strong>Renomeação de <code>_ingested_at</code> → <code>ingested_at</code> na fonte (nos handlers), com compatibilidade retroativa no schema.</strong> Identificador começando com <code>_</code> exige aspas em toda query Trino, e crase (não aspas simples) na sintaxe DDL Hive usada no <code>CREATE EXTERNAL TABLE</code>, dois dialetos diferentes dentro do mesmo Athena. Como já existiam arquivos gravados com o nome antigo (batch acumulado da CoinGecko, considerado valioso pra gold), a tabela bronze declara as duas colunas e o <code>MERGE INTO</code> usa <code>COALESCE(ingested_at, _ingested_at)</code> sem perder histórico nem precisar reprocessar/renomear nada no S3.</p>
+<p><strong>Coluna <code>asset_symbol</code> normalizada em ambas as tabelas silver.</strong> <code>"BTCUSDT"</code> (Binance) e <code>"btc"</code> (CoinGecko) apontam pro mesmo ativo com grafias diferentes. Resolvendo uma vez na silver (<code>regexp_replace(symbol, 'USDT$', '')</code> / <code>upper(symbol)</code>), o join da gold fica direto por <code>asset_symbol</code>, sem repetir esse de-para em toda query downstream.</p>
+<p><strong><code>MERGE INTO</code> com <code>WHEN NOT MATCHED THEN INSERT</code> apenas (não UPDATE) na silver.</strong> Trade e snapshot são eventos imutáveis — uma vez inseridos, não são alterados. A chave natural do <code>MERGE</code> (<code>trade_id</code> pra trades; <code>(id, last_updated)</code> pra market_snapshot) garante idempotência: reprocessar uma partição já processada não duplica.</p>
+<p><strong>Modo backfill separado do modo incremental, no mesmo handler.</strong> A Lambda de silver processa por padrão só a hora atual + hora anterior (<code>particoes_a_processar()</code>), pensada pra operação contínua. Dado histórico que já existia antes da Lambda começar a rodar (batch acumulado da CoinGecko) nunca seria alcançado por esse modo. Solução: o handler aceita um payload opcional <code>{"backfill": true}</code>, que troca o filtro de partição por <code>1=1</code> (tabela inteira, uma vez). O disparo automático do EventBridge nunca ativa esse modo (evento vazio não tem a chave), e mesmo que fosse acionado por engano, o <code>MERGE</code> idempotente não duplicaria nada — só gastaria uma query extra.</p>
+<p><strong>Diagnóstico de janela de agregação com dado real, não estimativa a priori.</strong> Antes de fixar o tamanho da janela usada na gold, uma query mediu quantos trades caem em cada janela candidata (5/10/15/20 min), por ativo, descartando a primeira e a última janela de cada grupo, que são truncadas pelo instante exato em que o streaming começa/termina e distorcem o mínimo real. Decisão (10 min) baseada no ativo mais fraco (ADA) não ganhar estabilidade adicional entre 5 e 15 min, só perdendo responsividade.</p>
+<h3 id="gold-layer-goldanomalias">Gold layer (<code>gold.anomalias</code>)</h3>
+<p><strong>Baseline é uma janela móvel recalculada, não um ponto fixo de calendário.</strong> O "normal" de um ativo não é definido por um valor fixo (ex: mesma hora de ontem/mês passado/ano passado) — não há sazonalidade de calendário relevante em cripto que justifique esse modelo. O baseline é a média e o desvio padrão do CoinGecko nas <strong>últimas 6h antes de cada momento</strong>, recalculado a cada execução via window function (<code>RANGE BETWEEN INTERVAL '6' HOUR PRECEDING AND CURRENT ROW</code>).</p>
+<p><strong>Preço representativo da janela de streaming: VWAP, não média simples.</strong> <code>SUM(price*quantity)/SUM(quantity)</code> pondera pelo volume de cada trade, um trade pequeno a um preço atípico não deveria pesar igual a um trade grande, e a média simples deixaria isso acontecer.</p>
+<p><strong>Detecção via z-score, limiar de 3 desvios padrão.</strong> <code>(preço_vwap_da_janela - baseline_média) / baseline_desvio</code>. Convenção estatística padrão ("regra dos 3 sigma"), ajustável depois de observar dado real em produção.</p>
+<p><strong>Agregação de trades em janelas de 10 minutos.</strong> Decidido com base no diagnóstico de trades-por-janela descrito na seção de silver — equilíbrio entre estabilidade estatística (evitar que poucos trades numa janela pequena gerem médias ruidosas, produzindo falso positivo) e responsividade.</p>
+<p><strong>As-of join via <code>JOIN</code> + <code>ROW_NUMBER()</code>, não subquery correlacionada dentro do <code>ON</code>.</strong> Presto/Trino (motor por trás do Athena) tem suporte limitado a subquery correlacionada na cláusula <code>JOIN ... ON</code>. O padrão robusto: <code>JOIN</code> trazendo todos os snapshots do CoinGecko anteriores ou iguais ao fim da janela de trade, depois <code>ROW_NUMBER() OVER (... ORDER BY ingested_at DESC)</code> pra escolher só o mais recente (<code>rn = 1</code>).</p>
+<p><strong><code>MERGE INTO</code> com upsert (<code>WHEN MATCHED THEN UPDATE</code>), diferente do padrão insert-only da silver.</strong> Trade e snapshot são imutáveis; o resultado agregado da gold não é — o <code>z_score</code> de uma janela já calculada pode mudar se chegar um snapshot novo do CoinGecko que revise o baseline dela.</p>
+<p><strong>Query da gold sem parametrização por partição, diferente das Lambdas de silver.</strong> O baseline móvel é window function sobre a tabela inteira de <code>silver.market_snapshot</code> — não dá pra restringir a "hora atual + anterior" sem quebrar o cálculo, que depende de ver as 6h de histórico antes de cada linha. Trade-off assumido: a query recalcula tudo a cada execução; a escala de dado que o projeto processa hoje deixa isso barato o suficiente.</p>
+<h3 id="infraestrutura-e-operacao">Infraestrutura e operação</h3>
+<p><strong>Athena Workgroup dedicado com <code>bytes_scanned_cutoff_per_query</code>.</strong> Trava de custo em nível de query (1 GB por padrão, ajustável), equivalente ao AWS Budgets já usado na Etapa 1, mas agindo antes do fato (aborta a query) em vez de só alertar depois.</p>
+<p><strong>Bucket de staging do Athena separado do data lake, com lifecycle de expiração curta.</strong> Resultado de query é dado efêmero (poucos dias de retenção) — não deveria compartilhar bucket nem política de retenção com bronze/silver/gold, que são dado que o projeto quer manter.</p>
+<p><strong>Log groups do Lambda declarados explicitamente, com retenção.</strong> Sem isso, o Lambda cria o log group sozinho na primeira invocação, mas sem expiração — logs acumulam indefinidamente e geram custo crescente sem necessidade.</p>
+<p><strong>Cada módulo Terraform é um root module com state próprio</strong> (<code>infra/</code>, <code>infra/streaming/</code>, <code>infra/athena/</code>). Permite destruir/recriar streaming sem afetar batch, por exemplo — só validado na prática quando a Etapa 2a precisou ser destruída por custo sem tocar no resto. Trade-off assumido: variáveis repetidas (como <code>alert_email</code>) precisam ser duplicadas em cada <code>.tfvars</code>.</p>
+<p><strong>IAM role única compartilhada pelas 3 Lambdas de transformação</strong>, em vez de uma role por Lambda. As três precisam exatamente do mesmo conjunto de permissões (Athena, Glue Catalog, S3 em bronze/silver/gold, staging bucket) — reaproveitar evita repetir a mesma policy três vezes.</p>
+<p><strong>Import resiliente a dois layouts nos handlers Python.</strong> Cada handler adiciona tanto o próprio diretório quanto o diretório <code>common/</code> ao <code>sys.path</code> — funciona tanto localmente (<code>common/</code> como pasta irmã de <code>silver/</code>/<code>gold/</code>) quanto dentro do zip do Lambda, onde o Terraform empacota tudo achatado no mesmo diretório via múltiplos blocos <code>source</code> do <code>archive_file</code>.</p>
+<h2 id="testes">Testes</h2>
+<p>43 testes unitários cobrindo producer, consumer, ingestão, e as 3 Lambdas de transformação (silver x2 + gold) — rodam sem AWS real (mocks de <code>boto3</code> e chamadas HTTP), validados em CI a cada push.</p>
+<pre><code class="language-bash">python -m pytest tests/ -v
+</code></pre>
+<h2 id="gestao-de-custos">Gestão de custos</h2>
+<ul>
+<li>Kinesis on-demand, producer sob demanda (não 24/7) — Etapa 2</li>
+<li>Infra de streaming destruída após cada ciclo de validação, recriada via <code>terraform apply</code> com <code>.tfvars</code> salvo</li>
+<li>Athena Workgroup com <code>bytes_scanned_cutoff_per_query</code> — trava por query, não só alerta pós-fato</li>
+<li>Bucket de staging do Athena com lifecycle de expiração (3 dias)</li>
+<li>Log groups com retenção explícita (14 dias) em todas as Lambdas</li>
+<li>AWS Budgets com alertas escalonados desde a Etapa 1</li>
+</ul>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li>[ ] Ajustar o limiar do z-score (hoje 3 desvios) com base em dado real de produção</li>
+<li>[ ] Reavaliar o custo do full-scan da query de gold conforme o histórico crescer</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
